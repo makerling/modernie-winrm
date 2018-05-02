@@ -6,6 +6,7 @@
 # This Vagrantfile was created by Daniel Menezes:
 #   https://github.com/danielmenezesbr/modernie-winrm
 #   E-mail: danielmenezes at gmail dot com
+# **Edits were made by makerling for installing FLEx software**
 ##
 
 ##
@@ -57,8 +58,12 @@ Vagrant.configure("2") do |config|
   end
 
 
-  config.vm.provision "file", source: "./tools/7z.exe", destination: "c:/users/IEUser/7z.exe"
-  config.vm.provision "file", source: "./tools/7z.dll", destination: "c:/users/IEUser/7z.dll"
-  config.vm.provision "file", source: "./tools/tools.zip", destination: "c:/users/IEUser/tools.zip"
-  config.vm.provision "winrm", type: "ie_box_automation"
+  config.vm.provision "file", source: "./tools/7z.exe", destination: "c:/users/IEUser/7z.exe"		
+if not provisioned?
+  config.vm.provision "file", source: "./tools/7z.dll", destination: "c:/users/IEUser/7z.dll"	
+if not provisioned?
+  config.vm.provision "file", source: "./tools/tools.zip", destination: 
+"c:/users/IEUser/tools.zip"	if not provisioned?
+  config.vm.provision "winrm", type: "ie_box_automation"	If not provisioned?
+  config.vm.provision :shell, path: "./shell/flexsilentinstall.ps1", run: "always"
 end
