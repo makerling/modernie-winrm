@@ -19,12 +19,12 @@ require_relative 'ie-box-automation-plugin.rb'
 Vagrant.configure("2") do |config|
 
   # WIN7 - IE11
-  config.vm.box = "microsoft.ie/ie11.win7"
-  config.vm.box_url = "file://IE11 - Win7.box"
+  #config.vm.box = "microsoft.ie/ie11.win7"
+  #config.vm.box_url = "file://IE11 - Win7.box"
   
   # Windows 10 Stable - MS Edge
-  #config.vm.box = "microsoft.ie/msedge.win10stable"
-  #config.vm.box_url = "file://dev-msedge.box"
+  config.vm.box = "microsoft.ie/msedge.win10stable"
+  config.vm.box_url = "file://MSEdge - Win10_stable.box"
   
   config.vm.boot_timeout = 5000
 
