@@ -77,6 +77,8 @@ module LocalCommand
 
                 execute_command(ssh, "./7z.exe e tools.zip -y", false)
 
+		execute_command(ssh, "./7z.exe e ../sharedfolder -y", false)				
+
                 puts "Disabling firewall..."
                 execute_command(ssh, "NetSh Advfirewall set allprofiles state off", false)
 
